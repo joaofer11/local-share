@@ -4,7 +4,7 @@
   "description": "",
   "main": "src/server.ts",
   "scripts": {
-    "dev": "tsnd --exit-child --clear src/server.ts"
+    "dev": "ts-node-dev --clear --respawn --inspect --transpile-only --ignore-watch node_modules src/server.ts"
   },
   "keywords": [],
   "author": "",
