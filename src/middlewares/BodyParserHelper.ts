@@ -1,6 +1,6 @@
 import { IRequest } from 'http'
 
-export class BodyParser {
+export class BodyParserHelper {
   private _bytesRead: number;
   private _highWaterMark: number;
   private _bufferdData: Buffer[];
@@ -11,7 +11,7 @@ export class BodyParser {
     this._highWaterMark = 1000000 // 1MB;
   }
 
-  parse (req: IRequest, callback: Function) {
+  execute (req: IRequest, callback: Function) {
     const contentType = req.headers['content-type']
 
     if (contentType === 'application/json') {
@@ -61,3 +61,5 @@ export class BodyParser {
     }
   }
 }
+
+export const bodyParserHelper = new BodyParserHelper()
