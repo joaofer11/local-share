@@ -6,4 +6,13 @@ declare module 'http' {
     queryParams?: Record<string, string> | {};
     body?: string | Record<string, string>;
   }
+
+  export interface IResponse extends ServerResponse {
+    send?: (
+      statusCode: number, data: 
+      Record<string, unknown> | Record<string, unknown>[]
+    ) => void;
+
+    sendStatus?: (statusCode: number) => void;
+  }
 }
